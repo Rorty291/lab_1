@@ -1,18 +1,19 @@
 # Лабораторна робота №1. Основи Python
 # Варіант: 18
 # ПІБ: Шовкун Владислав Станіславович
+while True:
+    try:
+        # Введення даних
+        mass = float(input("\nВведіть масу об'єкта. (кг)"))
+        velocity = float(input("\nВведіть швидкість об'єкта. (м/с)"))
+        if mass <= 0:
+            raise ValueError("Маса об'єкта не може бути меншою або дорівнювати нулеві.")
 
-try:
-    # Введення даних
-    mass = float(input("\nВведіть масу об'єкта. (кг)"))
-    velocity = float(input("\nВведіть швидкість об'єкта. (м/с)"))
-    if mass <= 0:
-        raise ValueError("Маса об'єкта не може бути меншою або дорівнювати нулеві.")
+        energy = (mass * (velocity ** 2)) / 2
 
-    energy = (mass * (velocity ** 2)) / 2
-
-    # Виведення результатів
-    print("Результати обчислень")
-    print(f"\nКінетична енергія об'єкта: {energy} Дж")
-except ValueError as e:
-    print(f"Помилка: {e}")
+        # Виведення результатів
+        print("Результати обчислень")
+        print(f"\nКінетична енергія об'єкта: {energy} Дж")
+        break
+    except ValueError as e:
+        print(f"Помилка: {e}")
